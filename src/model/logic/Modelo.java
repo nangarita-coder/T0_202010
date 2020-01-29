@@ -12,7 +12,7 @@ public class Modelo {
 	 * Atributos del modelo del mundo
 	 */
 	private IArregloDinamico datos;
-	
+
 	/**
 	 * Constructor del modelo del mundo con capacidad predefinida
 	 */
@@ -20,7 +20,7 @@ public class Modelo {
 	{
 		datos = new ArregloDinamico(7);
 	}
-	
+
 	/**
 	 * Constructor del modelo del mundo con capacidad dada
 	 * @param tamano
@@ -29,7 +29,7 @@ public class Modelo {
 	{
 		datos = new ArregloDinamico(capacidad);
 	}
-	
+
 	/**
 	 * Servicio de consulta de numero de elementos presentes en el modelo 
 	 * @return numero de elementos presentes en el modelo
@@ -47,7 +47,7 @@ public class Modelo {
 	{	
 		datos.agregar(dato);
 	}
-	
+
 	/**
 	 * Requerimiento buscar dato
 	 * @param dato Dato a buscar
@@ -57,7 +57,7 @@ public class Modelo {
 	{
 		return datos.buscar(dato);
 	}
-	
+
 	/**
 	 * Requerimiento eliminar dato
 	 * @param dato Dato a eliminar
@@ -67,6 +67,36 @@ public class Modelo {
 	{
 		return datos.eliminar(dato);
 	}
+	/**
+	 * Requerimiento eliminar dato
+	 * @param dato Dato a eliminar
+	 * @return dato eliminado
+	 */
+
+	public String toString ()
+	{   String cadena = null;
+	for (int i = 0; i < datos.darTamano(); i++) 
+	{
+		if(datos.darElemento(0)==null) 
+		{
+			cadena= "No hay elementos";
+		}
+		if(i==0)
+		{
+			cadena = datos.darElemento(0);
+		}
+		else 
+		{
+			cadena = cadena + datos.darElemento(i);
+		}
+
+
+	}
+	return cadena;
+
+	}
+
+
 
 
 }
