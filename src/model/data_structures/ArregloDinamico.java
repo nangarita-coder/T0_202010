@@ -66,7 +66,7 @@ public class ArregloDinamico implements IArregloDinamico {
 		// TODO implementar
 		// Recomendacion: Usar el criterio de comparacion natural (metodo compareTo()) definido en Strings.
 		{
-			// solución usando el método compareTo( ... ) // de la clase T
+			// solución usando el método compareTo( ... ) // de la clase T
 			String who = null;
 			boolean encontro = false;
 			for ( int i = 0; i < tamanoAct && !encontro; i++)
@@ -105,12 +105,11 @@ public class ArregloDinamico implements IArregloDinamico {
 					elementos[i]= elementos[i+1] ;
 				}
 			}
-			return "Se elimino el elemento";
+			
 		}
-		else
-		{
-			return "No se elimino el elemento";
-		}
+		
+			return dato;
+		
 	}
 
 }
