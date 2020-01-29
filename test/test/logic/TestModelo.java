@@ -53,7 +53,7 @@ public class TestModelo {
 		assertEquals(4, modelo.darTamano());
 		
 		setUp3();
-		assertEquals(200, modelo.darTamano());
+		assertEquals(100, modelo.darTamano());
 		
 		
 	}
