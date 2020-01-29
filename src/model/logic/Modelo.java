@@ -1,24 +1,23 @@
 package model.logic;
 
 import model.data_structures.ArregloDinamico;
-import model.data_structures.IArregloDinamico;
 
 /**
  * Definicion del modelo del mundo
  *
  */
-public class Modelo {
+public class Modelo<T> {
 	/**
 	 * Atributos del modelo del mundo
 	 */
-	private IArregloDinamico datos;
+	private ArregloDinamico<T> datos;
 
 	/**
 	 * Constructor del modelo del mundo con capacidad predefinida
 	 */
 	public Modelo()
 	{
-		datos = new ArregloDinamico(7);
+		datos = new ArregloDinamico<T>(7);
 	}
 
 	/**
@@ -27,7 +26,7 @@ public class Modelo {
 	 */
 	public Modelo(int capacidad)
 	{
-		datos = new ArregloDinamico(capacidad);
+		datos = new ArregloDinamico<T>(capacidad);
 	}
 
 	/**
@@ -43,7 +42,7 @@ public class Modelo {
 	 * Requerimiento de agregar dato
 	 * @param dato
 	 */
-	public void agregar(String dato)
+	public void agregar(T dato)
 	{	
 		datos.agregar(dato);
 	}
@@ -53,9 +52,9 @@ public class Modelo {
 	 * @param dato Dato a buscar
 	 * @return dato encontrado
 	 */
-	public String buscar(String dato)
+	public T buscar(T dato)
 	{
-		return datos.buscar(dato);
+		return (T) datos.buscar(dato);
 	}
 
 	/**
@@ -63,7 +62,7 @@ public class Modelo {
 	 * @param dato Dato a eliminar
 	 * @return dato eliminado
 	 */
-	public String eliminar(String dato)
+	public T eliminar(T dato)
 	{
 		return datos.eliminar(dato);
 	}
@@ -79,11 +78,7 @@ public class Modelo {
 	{
 		if(datos.darElemento(0)==null) 
 		{
-			cadena= "No hay elementos";
-		}
-		if(i==0)
-		{
-			cadena = datos.darElemento(0);
+			cadena=null;
 		}
 		else 
 		{

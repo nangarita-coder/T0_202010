@@ -136,24 +136,24 @@ public class TestArregloDinamico {
 		setUp1();
 		arreglo.agregar("prueba");
 		arreglo.eliminar("prueba");
-		assertEquals("Se elimino el elemento", arreglo.eliminar("prueba"));
+		assertEquals("prueba", arreglo.eliminar("prueba"));
 		assertEquals(0, arreglo.darTamano());
 		assertEquals(100, arreglo.darCapacidad());
 		
 		arreglo.agregar("prueba");
 		arreglo.eliminar("a");
-		assertEquals("No se elimino el elemento", arreglo.eliminar("prueba"));
+		assertEquals("prueba", arreglo.eliminar("prueba"));
 		assertEquals(1, arreglo.darTamano());
 		assertEquals(100, arreglo.darCapacidad());
 
 		setUp2();
 		arreglo.eliminar("a");
-		assertEquals("Se elimino el elemento", arreglo.eliminar("prueba"));
+		assertEquals("prueba", arreglo.eliminar("prueba"));
 		assertEquals(3, arreglo.darTamano());
 		assertEquals(100, arreglo.darCapacidad());
 		
 		arreglo.eliminar("a");
-		assertEquals("No se elimino el elemento", arreglo.eliminar("prueba"));
+		assertEquals("prueba", arreglo.eliminar("prueba"));
 		assertEquals(3, arreglo.darTamano());
 		assertEquals(100, arreglo.darCapacidad());
 
